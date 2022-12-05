@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>MY First Code</title>
+</head>
+<body>
+
+<h1 style="color:rgb(255,0,0)">Dados Pessoais</h1>
+<p>Bianca's First Code!</p>
+
+    <div class='Name'> <!-- Criando uma divisão para requisição do Nome da pessoa-->
+    <h2 style="color:rgb(255,0,0)">Name</h2> <!-- Colocando a letra em vermelho-->
+      <label>Imput your name:</label> <!-- -->
+      <input type="text" id="fname"><br><br> <!-- criando a txbox para inserir o dado -->
+      <input type="submit" onclick="test_name()"> </input> <!-- criando o botão enviar-->
+      <label id="name"></label>
+      <p> </p>
+        
+        <div>
+        <!-- criando a função para pegar o conteudo do txbox e mostrar na tela -->
+        <script> 
+          function test_name() {
+            document.getElementById("name").textContent = document.getElementById("fname").value;
+          } 
+        </script>
+        </div>
+        <!--
+        Se quiser pode faser em javascript, usando:
+        <script> 
+        Let test_name = () => {
+        var imput_text_value = document.getElementById("fname").value;
+        var output_label = document.getElementById("name");
+        output_label.textContent = imput_text_value.value;
+        }
+        </script> 
+        -->
+    </div>
+
+    <div class='Sexo'> <!-- Criando uma divisão para requisição do Sexo da pessoa-->
+      <h2 style="color:rgb(255,0,0)">Sexo</h2> <!-- Colocando a letra em vermelho-->
+      <label>Imput your sex:</label>
+      <p> </p>
+      <input type="checkbox" id="Man">
+      <label for="Man"> You are a man.</label><br>
+      <input type="checkbox" id="Woman">
+      <label for="Woman"> You are a woman.</label><br>
+    </div>
+
+</body>
+</html>
+
+
