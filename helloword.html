@@ -7,23 +7,26 @@
 <body>
 
 <!-- Style (Criando a config estetica das div)
-margin-botton: espaçamento para a box seguinte
+background-color: cor de fundo da tela
+  margin-botton: espaçamento para a box seguinte
 padding: espaçamento lateral da box-->
 
 <style>
   .Name {
-  border-color: #CCC #999 #999 #CCC;
-  border: 1px solid #CCC;
-  margin-bottom: 20px; 
-  padding: 10px;
-  }
+    body{background: #FFF1D6}
 
-  .Sexo {
-  border-color: #CCC #999 #999 #CCC;
-  border: 1px solid #CCC;
-  margin-bottom: 20px;
-  padding: 10px;
-  }
+    border-color: #CCC #999 #999 #CCC;
+    border: 1px solid #CCC;
+    margin-bottom: 20px; 
+    padding: 10px;
+    }
+
+    .Sexo {
+    border-color: #CCC #999 #999 #CCC;
+    border: 1px solid #CCC;
+    margin-bottom: 20px;
+    padding: 10px;
+    }
 </style>
 
 <h1 style="color:rgb(255,0,0)">Dados Pessoais</h1>
@@ -32,16 +35,24 @@ padding: espaçamento lateral da box-->
     <div class='Name'> <!-- Criando uma divisão para requisição do Nome da pessoa-->
     <h2 style="color:rgb(255,0,0)">Name</h2> <!-- Colocando a letra em vermelho-->
       <label>Imput your name:</label> <!-- -->
-      <input type="text" id="fname"><br><br> <!-- criando a txbox para inserir o dado -->
-      <input type="submit" onclick="test_name()"> </input> <!-- criando o botão enviar-->
+      <input type="text" id="fname" onkeydown="test_name_enter()"><br><br> <!-- criando a txbox para inserir o dado e ao clicar enter ele dá submit -->
+      <input id="btn_submit" type="submit" onclick="test_name_click()"></input> <!-- criando o botão enviar-->
+      <p> </p>
       <label id="name"></label>
       <p> </p>
         
         <div>
-        <!-- criando a função para pegar o conteudo do txbox e mostrar na tela -->
+        <!-- criando a função para pegar o conteudo do txbox e mostrar na tela OBS:13 é ENTER em hexadecimal -->
         <script> 
-          function test_name() {
-            document.getElementById("name").textContent = document.getElementById("fname").value;
+          function test_name_click() {
+            document.getElementById("name").textContent ="Meu nome é: " + document.getElementById("fname").value;
+          } 
+        </script>
+        <script> 
+          function test_name_enter() {
+            if (event.keyCode == 13)
+                        document.getElementById('btn_submit').click()
+            // document.getElementById("name").textContent ="Meu nome é: " + document.getElementById("fname").value;
           } 
         </script>
         </div>
@@ -69,5 +80,3 @@ padding: espaçamento lateral da box-->
 
 </body>
 </html>
-
-
